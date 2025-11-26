@@ -178,5 +178,7 @@ if (!isset($_GET['code'])) {
     );
     //Use this to interact with an API on the users behalf
     //Use this to get a new access token if the old one expires
-    echo 'Refresh Token: ', htmlspecialchars($token->getRefreshToken());
+    file_put_contents('token.txt', $token->getRefreshToken());
+    echo "Token saved.";
+
 }
